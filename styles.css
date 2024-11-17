@@ -107,3 +107,24 @@ footer {
   background-size: cover;
   animation: fall linear infinite;
 }
+
+/* Media Queries para dispositivos móveis */
+@media (max-width: 768px) {
+  .content {
+    top: 60%;
+    padding: 20px;
+    max-width: 90%;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  .apology {
+    font-size: 1em;
+  }
+
+  footer {
+    font-size: 0.8em;
+  }
+}
