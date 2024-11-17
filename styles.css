@@ -7,7 +7,7 @@
 
 body, html {
   height: 100%;
-  overflow: hidden;
+  overflow-y: auto; /* Permite a barra de rolagem vertical */
 }
 
 .background-slideshow {
@@ -52,17 +52,17 @@ body, html {
 }
 
 .content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative; /* Altera para relativo para permitir rolagem */
+  margin: auto;
+  padding: 40px;
   text-align: center;
   color: #fff;
   background: rgba(0, 0, 0, 0.6);
-  padding: 40px;
   border-radius: 15px;
   max-width: 700px;
   width: 90%;
+  margin-top: 50px; /* Adiciona margem superior para garantir espaço */
+  margin-bottom: 50px; /* Adiciona margem inferior para garantir espaço */
 }
 
 h1 {
