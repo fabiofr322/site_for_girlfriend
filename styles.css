@@ -7,7 +7,7 @@
 
 body, html {
   height: 100%;
-  overflow-y: auto; /* Permite a barra de rolagem vertical */
+  overflow: hidden;
 }
 
 .background-slideshow {
@@ -51,18 +51,23 @@ body, html {
   25%, 75% { opacity: 1; }
 }
 
-.content {
-  position: relative; /* Altera para relativo para permitir rolagem */
-  margin: auto;
+.content-container {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  overflow-y: auto; /* Permite rolar apenas o conteúdo */
   padding: 40px;
+}
+
+.content {
+  margin: auto;
   text-align: center;
   color: #fff;
   background: rgba(0, 0, 0, 0.6);
   border-radius: 15px;
   max-width: 700px;
   width: 90%;
-  margin-top: 50px; /* Adiciona margem superior para garantir espaço */
-  margin-bottom: 50px; /* Adiciona margem inferior para garantir espaço */
+  padding: 40px;
 }
 
 h1 {
