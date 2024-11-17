@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body, html {
+  height: 100%;
+  overflow: hidden;
+}
+
+.background-slideshow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  animation: slideShow 40s infinite; /* Duração ajustada para somar o tempo de todas as imagens */
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: fade 40s infinite;
+}
+
+.slide:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.slide:nth-child(2) {
+  animation-delay: 10s;
+}
+
+.slide:nth-child(3) {
+  animation-delay: 20s;
+}
+
+.slide:nth-child(4) {
+  animation-delay: 30s;
+}
+
+@keyframes fade {
+  0%, 10%, 90%, 100% { opacity: 0; }
+  25%, 75% { opacity: 1; }
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  border-radius: 15px;
+  max-width: 700px;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #FFC0CB; /* cor rosada */
+}
+
+.apology {
+  font-size: 1.2em;
+  line-height: 1.5;
+  color: #f1f1f1;
+  margin-bottom: 20px;
+}
+
+footer {
+  font-size: 1em;
+  color: #FFC0CB;
+  margin-top: 15px;
+}
+
+/* Animação dos corações */
+@keyframes fall {
+  0% { transform: translateY(-100%); opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+.hearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.heart {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-image: url('heart.png'); /* Adicione o caminho da imagem do coração */
+  background-size: cover;
+  animation: fall linear infinite;
+}
